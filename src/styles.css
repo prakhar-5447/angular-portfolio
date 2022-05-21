@@ -18,11 +18,12 @@ body::-webkit-scrollbar-thumb {
 
 html,
 body {
-  height: 100%;
+  height: 100vh;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   font-family: "Sarabun", sans-serif;
+  background-attachment: fixed;
 }
