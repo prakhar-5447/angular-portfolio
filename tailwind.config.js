@@ -10,7 +10,7 @@ module.exports = {
         "mint-cream": "#E4EEE9",
         popstar: "#BF506B",
         mauvelous: "#E99BA6",
-        "pale-pink": "#E99BA6",
+        "pale-pink": "#FFD8DD",
       },
     },
   },
