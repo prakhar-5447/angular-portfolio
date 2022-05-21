@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   document!: HTMLElement;
   title = 'angular-portfolio';
-  
-  constructor(){
+
+  constructor() {
     document.body.classList.add('bg-gradient-to-b');
     document.body.classList.add('from-mauvelous');
     document.body.classList.add('to-pale-pink');
-    console.log("asdas")
   }
 }
