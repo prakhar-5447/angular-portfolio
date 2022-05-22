@@ -20,19 +20,19 @@
   <nav class="w-full h-16 flex items-center justify-end overflow-hidden">
     <ul class="flex py-6">
       <li class="mx-16 ml-32">
-        <a href="#CONTACT" class="cursor-pointer">CONTACT</a>
+        <a (click)="scroll('CONTACT')" class="cursor-pointer">CONTACT</a>
       </li>
       <li class="mx-16">
-        <a href="#WORK" class="cursor-pointer">WORK</a>
+        <a (click)="scroll('WORK')" class="cursor-pointer">WORK</a>
       </li>
       <li class="mx-16">
-        <a href="#PROJECT" class="cursor-pointer">PROJECT</a>
+        <a (click)="scroll('PROJECT')" class="cursor-pointer">PROJECT</a>
       </li>
       <li class="mx-16">
-        <a href="#ABOUT" class="cursor-pointer">ABOUT</a>
+        <a (click)="scroll('ABOUT')" class="cursor-pointer">ABOUT</a>
       </li>
       <li class="mx-16 mr-32">
-        <a href="#HOME" class="cursor-pointer">HOME</a>
+        <a (click)="scroll('HOME')" class="cursor-pointer">HOME</a>
       </li>
     </ul>
   </nav>
@@ -78,19 +78,28 @@
       *ngIf="!color"
       class="absolute bottom-0 flex flex-col justify-center items-center mb-5 cursor-pointer"
     >
-      <img (click)="change_color()" class="absolute" src="../assets/images/buttons/piglet_btn.svg" alt="" />
+      <img
+        (click)="change_color()"
+        class="absolute"
+        src="../assets/images/buttons/piglet_btn.svg"
+        alt=""
+      />
       <img src="../assets/images/buttons/grey_circle.svg" alt="" />
     </div>
     <div
       *ngIf="color"
       class="absolute bottom-0 flex flex-col justify-center items-center mb-5 cursor-pointer"
     >
-      <img (click)="change_color()" class="absolute" src="../assets/images/buttons/grey_btn.svg" alt="" />
+      <img
+        (click)="change_color()"
+        class="absolute"
+        src="../assets/images/buttons/grey_btn.svg"
+        alt=""
+      />
       <img src="../assets/images/buttons/piglet_circle.svg" alt="" />
     </div>
   </div>
 </div>
-
 
 <app-home></app-home>
 <app-about></app-about>
