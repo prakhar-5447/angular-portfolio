@@ -7,6 +7,9 @@ import { AboutComponent } from './component/about/about.component';
 import { ProjectComponent } from './component/project/project.component';
 import { WorkComponent } from './component/work/work.component';
 import { ContactComponent } from './component/contact/contact.component';
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,15 @@ import { ContactComponent } from './component/contact/contact.component';
     AboutComponent,
     ProjectComponent,
     WorkComponent,
-    ContactComponent
+    ContactComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    MatIconModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

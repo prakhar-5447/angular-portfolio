@@ -37,8 +37,8 @@ body {
 .active:before {
   content: "";
   position: absolute;
-  width: 5px;
-  height: 5px;
+  width: 3px;
+  height: 3px;
   border-radius: 50%;
   left: calc(50% - 3px);
   animation: dot 0.3s forwards ease-in-out;
@@ -46,11 +46,14 @@ body {
 
 @keyframes dot {
   from {
-    top: 40px;
+    top: 30px;
     background-color: transparent;
   }
   to {
-    top: 22px;
+    top: 20px;
     background-color: white;
   }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

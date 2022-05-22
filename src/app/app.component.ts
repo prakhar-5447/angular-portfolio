@@ -9,6 +9,14 @@ export class AppComponent {
   document!: HTMLElement;
   title = 'angular-portfolio';
   color: boolean = true;
+  show: boolean = true;
+  innerWidth!: number;
+
+  constructor() {
+    document.body.classList.add('bg-gradient-to-b');
+    document.body.classList.add('from-mauvelous');
+    document.body.classList.add('to-pale-pink');
+  }
 
   change_color(): void {
     this.color = !this.color;
@@ -29,17 +37,30 @@ export class AppComponent {
     }
   }
 
-  constructor() {
-    document.body.classList.add('bg-gradient-to-b');
-    document.body.classList.add('from-mauvelous');
-    document.body.classList.add('to-pale-pink');
+  show_hide() {
+    this.show = !this.show;
   }
 
-  scroll(id: string) {
-    const section = document.getElementById(id); //section with id of clicked li
-    section!.scrollIntoView(); //scroll to section with same d
+  // SCROLL
+  scrollUp() {
+    window.scrollTo(0, 0);
   }
 
+  scrollMid() {
+    window.scrollTo(0, document.body.scrollHeight / 2 - 450);
+  }
+
+  scrollDown() {
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+  scrollMidUp() {
+    window.scrollTo(0, document.body.scrollHeight / 5);
+  }
+  scrollMidDown() {
+    window.scrollTo(0, document.body.scrollHeight / 2 + 450);
+  }
+
+  // AUTO ACTIVE LINK ON SCROLL
   @HostListener('window:scroll', [])
   onScroll(): void {
     if (window.pageYOffset > 100) {
@@ -48,6 +69,7 @@ export class AppComponent {
       if (document.querySelector('nav')!.classList.contains('bg-black'))
         document.querySelector('nav')!.classList.remove('bg-black');
     }
+
     const sections = document.querySelectorAll('section');
     const NavLi = document.querySelectorAll('nav ul li');
     let current: string = '';
@@ -65,5 +87,10 @@ export class AppComponent {
         li.classList.add('active');
       }
     });
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.innerWidth = window.innerWidth;
   }
 }

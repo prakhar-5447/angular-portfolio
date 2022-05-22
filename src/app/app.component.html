@@ -1,82 +1,136 @@
-<div class="fixed h-screen w-screen flex text-xs text-white">
+<div class="fixed h-full w-screen flex text-xs text-white">
   <!-- LEFT BAR -->
   <div
-    class="bg-white/[0.5] w-16 h-screen flex justify-between flex-col items-center"
+    class="left_bar bg-white/[0.5] w-16 h-full flex justify-between flex-col items-center"
   >
     <img src="../assets/images/pixel8cloud.png" class="h-16 w-16" alt="" />
     <div class="h-28 flex flex-col items-center justify-between mb-3">
       <!-- UP ARROW -->
-      <img src="../assets/images/mouse/ArrowUp.svg" alt="" />
+      <img
+        class="cursor-pointer"
+        src="../assets/images/mouse/ArrowUp.svg"
+        (click)="scrollUp()"
+        alt=""
+      />
 
       <!-- MOUSE -->
       <img src="../assets/images/mouse/mouse.svg" alt="" />
 
       <!-- DOWN ARROW -->
-      <img src="../assets/images/mouse/ArrowDown.svg" alt="" />
+      <img
+        class="cursor-pointer"
+        src="../assets/images/mouse/ArrowDown.svg"
+        (click)="scrollDown()"
+        alt=""
+      />
     </div>
   </div>
 
   <!-- NAVBAR -->
-  <nav class="w-full h-16 flex items-center justify-end overflow-hidden transition-colors ease-in-out delay-100">
-    <ul class="flex py-6">
-      <li class="CONTACT mx-16 ml-32">
-        <a (click)="scroll('CONTACT')" class="cursor-pointer">CONTACT</a>
+  <nav
+    class="nav_bar w-full h-16 flex items-center justify-end overflow-hidden transition-colors ease-in-out delay-100 select-none"
+  >
+    <ul class="flex py-6 snap-x">
+      <li class="CONTACT mx-16 ml-32 snap-center">
+        <a (click)="scrollDown()" class="cursor-pointer">CONTACT</a>
       </li>
-      <li class="WORK mx-16">
-        <a (click)="scroll('WORK')" class="cursor-pointer">WORK</a>
+      <li class="WORK mx-16 snap-center">
+        <a (click)="scrollMidDown()" class="cursor-pointer">WORK</a>
       </li>
-      <li class="PROJECT mx-16">
-        <a (click)="scroll('PROJECT')" class="cursor-pointer">PROJECT</a>
+      <li class="PROJECT mx-16 snap-center">
+        <a (click)="scrollMid()" class="cursor-pointer">PROJECT</a>
       </li>
-      <li class="ABOUT mx-16">
-        <a (click)="scroll('ABOUT')" class="cursor-pointer">ABOUT</a>
+      <li class="ABOUT mx-16 snap-center">
+        <a (click)="scrollMidUp()" class="cursor-pointer">ABOUT</a>
       </li>
-      <li class="HOME mx-16 mr-32 active">
-        <a (click)="scroll('HOME')" class="cursor-pointer">HOME</a>
+      <li class="HOME mx-16 mr-32 active snap-center">
+        <a (click)="scrollUp()" class="cursor-pointer">HOME</a>
       </li>
     </ul>
   </nav>
 
   <!-- RIGHT BAR -->
   <div
-    class="bg-black/[0.5] w-16 h-screen flex flex-col justify-center items-center"
+    class="right_bar bg-black/[0.5] w-16 h-full flex justify-center items-center"
   >
-    <!-- LINKEDIN -->
-    <a
-      href="https://www.linkedin.com/in/prakhar-sahu-4519b8206"
-      target="_blank"
-    >
-      <img class="my-2" src="../assets/images/socials/linkedn.svg" alt="" />
-    </a>
+    <div *ngIf="innerWidth<1024" class="absolute top-3">
+      <button mat-icon-button (click)="show_hide()">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+    <div *ngIf="!show" class="flex flex-col justify-center items-center">
+      <img
+        (click)="scrollUp()"
+        class="HOME my-2"
+        src="../assets/images/nav/home.svg"
+        alt=""
+      />
+      <img
+        (click)="scrollMidUp()"
+        class="ABOUT my-2"
+        src="../assets/images/nav/about.svg"
+        alt=""
+      />
+      <img
+        (click)="scrollMid()"
+        class="PROJECT my-2"
+        src="../assets/images/nav/project.svg"
+        alt=""
+      />
+      <img
+        (click)="scrollMidDown()"
+        class="WORK my-2"
+        src="../assets/images/nav/work.svg"
+        alt=""
+      />
+      <img
+        (click)="scrollDown()"
+        class="CONTACT my-2"
+        src="../assets/images/nav/contact.svg"
+        alt=""
+      />
+    </div>
 
-    <!-- TWITTER -->
-    <a href="https://twitter.com/prakhar_5447" target="_blank">
-      <img class="my-2" src="../assets/images/socials/twitter.svg" alt="" />
-    </a>
+    <!-- SOCIALS -->
+    <div *ngIf="show" class="flex flex-col justify-center items-center">
+      <!-- LINKEDIN -->
+      <a
+        href="https://www.linkedin.com/in/prakhar-sahu-4519b8206"
+        target="_blank"
+      >
+        <img class="my-2" src="../assets/images/socials/linkedn.svg" alt="" />
+      </a>
 
-    <!-- INSTAGRAM -->
-    <a href="https://instagram.com/prakhar_5447" target="_blank">
-      <img class="my-2" src="../assets/images/socials/instagram.svg" alt="" />
-    </a>
+      <!-- TWITTER -->
+      <a href="https://twitter.com/prakhar_5447" target="_blank">
+        <img class="my-2" src="../assets/images/socials/twitter.svg" alt="" />
+      </a>
 
-    <!-- GITHUB -->
-    <a href="https://github.com/prakhar-5447" target="_blank">
-      <img class="my-2" src="../assets/images/socials/github.svg" alt="" />
-    </a>
+      <!-- INSTAGRAM -->
+      <a href="https://instagram.com/prakhar_5447" target="_blank">
+        <img class="my-2" src="../assets/images/socials/instagram.svg" alt="" />
+      </a>
 
-    <!-- DISCRDD -->
-    <a href="https://discord.gg/yS4RsAkDHv" target="_blank">
-      <img class="my-2" src="../assets/images/socials/discord.svg" alt="" />
-    </a>
+      <!-- GITHUB -->
+      <a href="https://github.com/prakhar-5447" target="_blank">
+        <img class="my-2" src="../assets/images/socials/github.svg" alt="" />
+      </a>
 
-    <!-- WORDPRESS -->
-    <a href="" target="_blank">
-      <img class="my-2" src="../assets/images/socials/wordpress.svg" alt="" />
-    </a>
+      <!-- DISCRDD -->
+      <a href="https://discord.gg/yS4RsAkDHv" target="_blank">
+        <img class="my-2" src="../assets/images/socials/discord.svg" alt="" />
+      </a>
 
+      <!-- WORDPRESS -->
+      <a href="" target="_blank">
+        <img class="my-2" src="../assets/images/socials/wordpress.svg" alt="" />
+      </a>
+    </div>
+
+    <!-- COLOR -->
     <div
       *ngIf="!color"
-      class="absolute bottom-0 flex flex-col justify-center items-center mb-5 cursor-pointer"
+      class="absolute bottom-5 flex flex-col justify-center items-center cursor-pointer"
     >
       <img
         (click)="change_color()"
