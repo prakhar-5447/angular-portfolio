@@ -42,6 +42,12 @@ export class AppComponent {
 
   @HostListener('window:scroll', [])
   onScroll(): void {
+    if (window.pageYOffset > 100) {
+      document.querySelector('nav')!.classList.add('bg-black');
+    } else {
+      if (document.querySelector('nav')!.classList.contains('bg-black'))
+        document.querySelector('nav')!.classList.remove('bg-black');
+    }
     const sections = document.querySelectorAll('section');
     const NavLi = document.querySelectorAll('nav ul li');
     let current: string = '';
