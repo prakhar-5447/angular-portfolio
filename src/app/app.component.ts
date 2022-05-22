@@ -9,10 +9,8 @@ export class AppComponent {
   document!: HTMLElement;
   title = 'angular-portfolio';
   color: boolean = true;
-
-  click() {
-    console.log('dasda');
-  }
+  window!: Window;
+  
   change_color(): void {
     this.color = !this.color;
     if (this.color) {
@@ -37,4 +35,9 @@ export class AppComponent {
     document.body.classList.add('from-mauvelous');
     document.body.classList.add('to-pale-pink');
   }
+
+  scroll(id: string) {
+    let el = document.getElementById(id);
+    el!.scrollIntoView();
+}
 }
