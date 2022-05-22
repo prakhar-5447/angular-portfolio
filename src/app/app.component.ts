@@ -9,8 +9,7 @@ export class AppComponent {
   document!: HTMLElement;
   title = 'angular-portfolio';
   color: boolean = true;
-  window!: Window;
-  
+
   change_color(): void {
     this.color = !this.color;
     if (this.color) {
@@ -37,7 +36,28 @@ export class AppComponent {
   }
 
   scroll(id: string) {
-    let el = document.getElementById(id);
-    el!.scrollIntoView();
-}
+    const section = document.getElementById(id); //section with id of clicked li
+    section!.scrollIntoView(); //scroll to section with same d
+  }
+
+  @HostListener('window:scroll', [])
+  onScroll(): void {
+    const sections = document.querySelectorAll('section');
+    const NavLi = document.querySelectorAll('nav ul li');
+    let current: string = '';
+    sections.forEach((section) => {
+      let sectionTop = section.offsetTop;
+      let sectionHeight = section.clientHeight;
+      if (window.pageYOffset >= sectionTop - sectionHeight / 4) {
+        current = section.getAttribute('id') ?? '';
+      }
+    });
+
+    NavLi.forEach((li) => {
+      li.classList.remove('active');
+      if (li.classList.contains(current)) {
+        li.classList.add('active');
+      }
+    });
+  }
 }

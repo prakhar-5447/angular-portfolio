@@ -17,21 +17,21 @@
   </div>
 
   <!-- NAVBAR -->
-  <nav class="w-full h-16 flex items-center justify-end overflow-hidden">
+  <nav class="w-full h-16 flex items-center justify-end overflow-hidden bg-black">
     <ul class="flex py-6">
-      <li class="mx-16 ml-32">
+      <li class="CONTACT mx-16 ml-32">
         <a (click)="scroll('CONTACT')" class="cursor-pointer">CONTACT</a>
       </li>
-      <li class="mx-16">
+      <li class="WORK mx-16">
         <a (click)="scroll('WORK')" class="cursor-pointer">WORK</a>
       </li>
-      <li class="mx-16">
+      <li class="PROJECT mx-16">
         <a (click)="scroll('PROJECT')" class="cursor-pointer">PROJECT</a>
       </li>
-      <li class="mx-16">
+      <li class="ABOUT mx-16">
         <a (click)="scroll('ABOUT')" class="cursor-pointer">ABOUT</a>
       </li>
-      <li class="mx-16 mr-32">
+      <li class="HOME mx-16 mr-32 active">
         <a (click)="scroll('HOME')" class="cursor-pointer">HOME</a>
       </li>
     </ul>
@@ -103,6 +103,6 @@
 
 <app-home></app-home>
 <app-about></app-about>
-<app-work></app-work>
 <app-project></app-project>
+<app-work></app-work>
 <app-contact></app-contact>

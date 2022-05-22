@@ -28,3 +28,29 @@ body {
   font-family: "Sarabun", sans-serif;
   background-attachment: fixed;
 }
+
+.active {
+  display: inline-block;
+  position: relative;
+}
+
+.active:before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  left: calc(50% - 3px);
+  animation: dot 0.3s forwards ease-in-out;
+}
+
+@keyframes dot {
+  from {
+    top: 40px;
+    background-color: transparent;
+  }
+  to {
+    top: 22px;
+    background-color: white;
+  }
+}
