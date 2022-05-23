@@ -1,6 +1,7 @@
 <div class="fixed h-full w-screen flex text-xs text-white">
   <!-- LEFT BAR -->
   <div
+    [ngClass]="{ hidden: innerWidth <= 1024 }"
     class="left_bar bg-white/[0.5] w-16 h-full flex justify-between flex-col items-center"
   >
     <img src="../assets/images/pixel8cloud.png" class="h-16 w-16" alt="" />
@@ -28,7 +29,11 @@
 
   <!-- NAVBAR -->
   <nav
-    class="nav_bar w-full h-16 flex items-center justify-end transition-colors ease-in-out delay-100 select-none"
+    [ngClass]="{
+      hidden: innerWidth <= 1024,
+      'justify-center': innerWidth <= 1200
+    }"
+    class="w-full h-16 flex items-center justify-end transition-colors ease-in-out delay-100 select-none"
   >
     <ul class="flex py-6">
       <li class="CONTACT mx-16 ml-32">
@@ -50,7 +55,10 @@
   </nav>
 
   <!-- TOGGLE -->
-  <nav *ngIf="show" class="absolute inset-0 flex items-center justify-center select-none bg-black/[0.5]">
+  <nav
+    *ngIf="show"
+    class="absolute inset-0 flex items-center justify-center select-none bg-black/[0.5]"
+  >
     <ul class="flex flex-col text-center">
       <li class="HOME my-2 mt-4">
         <a (click)="scrollUp()" class="cursor-pointer">HOME</a>
@@ -72,9 +80,10 @@
 
   <!-- RIGHT BAR -->
   <div
+    [ngClass]="{ 'fixed right-0': innerWidth <= 1024 }"
     class="right_bar bg-black/[0.5] w-16 h-full flex justify-center items-center"
   >
-    <div *ngIf="innerWidth<=1024" class="absolute top-3">
+    <div *ngIf="innerWidth <= 1024" class="absolute top-3">
       <button mat-icon-button (click)="toogle()">
         <mat-icon>more_vert</mat-icon>
       </button>
