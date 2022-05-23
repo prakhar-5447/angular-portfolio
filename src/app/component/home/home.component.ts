@@ -7,10 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   @Input() color!: boolean;
+  @Input() innerWidth!: number;
   constructor() {}
 
   ngOnInit(): void {}
-  scrollMidUp() {
+  scroll() {
     window.scrollTo(0, document.body.scrollHeight / 5);
   }
 }

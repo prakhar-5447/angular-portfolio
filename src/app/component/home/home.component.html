@@ -1,23 +1,58 @@
 <!-- HOME -->
-<section id="HOME" class="h-screen flex items-center">
-  <div><img src="../../../assets/images/prakhar.png" alt="" /></div>
-  <div class="font-medium text-2xl">
-    <span class="text-6xl">PRAKHAR SAHU</span>
+<section
+  [ngClass]="{
+    'flex-col pr-20 pl-3': innerWidth < 1110,
+    'items-center': innerWidth >= 1110
+  }"
+  id="HOME"
+  class="h-screen flex justify-center"
+>
+  <div [ngClass]="{ 'h-1/2': innerWidth >= 1110 }">
+    <img
+      src="../../../assets/images/prakhar.png"
+      [ngClass]="{
+        'border-popstar ': color,
+        'border-glaucous': !color,
+        'mr-10': innerWidth >= 1110,
+        'h-52 my-2': innerWidth < 630
+      }"
+      class="h-full border-4 border-double"
+      alt=""
+    />
+  </div>
+  <div
+    [ngClass]="{ 'text-lg pr-10': innerWidth < 630 }"
+    class="font-medium text-3xl"
+  >
+    <span
+      [ngClass]="{ 'text-3xl': innerWidth < 630 }"
+      class="text-black text-6xl"
+      >PRAKHAR SAHU</span
+    >
     <p>
       <span class="text-white">Full Stack Web Developer</span>
-      <span
-        [ngClass]="{ 'text-mauvelous': color, 'text-wild-blue-yonder': !color }"
-        >| UI/UX</span
+      <span [ngClass]="{ 'text-popstar': color, 'text-glaucous': !color }">
+        | UI/UX</span
       >
     </p>
     <p
       [ngClass]="{
-        'text-mauvelous/[0.8]': color,
-        'text-wild-blue-yonder/[0.8]': !color
+        'text-popstar/[0.6] ': color,
+        'text-glaucous/[0.6] ': !color
       }"
     >
-      Designers have ideas, and developers are skilled. They are Different
+      Designers have ideas, and developers are skilled.<br />
+      They are Different
     </p>
-    <button class="cursor-pointer"><a (click)="scrollMidUp()" class="cursor-pointer">Let's go &rarr;</a></button>
+    <button
+      (click)="scroll()"
+      [ngClass]="{
+        'border-popstar hover:bg-popstar ': color,
+        'border-glaucous hover:bg-glaucous ': !color
+      }"
+      class="cursor-pointer py-3 px-6 border-2 rounded-lg"
+    >
+      <a>Let's go &rarr;</a>
+    </button>
   </div>
 </section>

@@ -1,4 +1,4 @@
-<div class="h-full w-screen flex text-xs text-white">
+<div class="h-full w-screen flex text-xs text-white select-none">
   <!-- LEFT BAR -->
   <div
     *ngIf="innerWidth >= 1110"
@@ -61,7 +61,7 @@
     </nav>
 
     <!-- HOME -->
-    <app-home [color]="color"></app-home>
+    <app-home [color]="color" [innerWidth]="innerWidth"></app-home>
 
     <!-- ABOUT -->
     <app-about></app-about>
