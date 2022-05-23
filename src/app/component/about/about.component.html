@@ -1,2 +1,121 @@
 <!-- ABOUT -->
-<section id="ABOUT" class="h-screen flex justify-center items-center">ABOUT</section>
+<section
+  [ngClass]="{
+    'flex-col pr-20 pl-3 py-24': innerWidth < 1110,
+    'py-56': innerWidth >= 1110,
+    'text-popstar/[0.6] ': color,
+    'text-glaucous/[0.6] ': !color
+  }"
+  id="ABOUT"
+  class="flex justify-center"
+>
+  <!-- LEFT -->
+  <div class="flex flex-col">
+    <div
+      [ngClass]="{ 'text-2xl': innerWidth >= 630 }"
+      class="font-bold text-sm"
+    >
+      <span
+        [ngClass]="{ 'text-xl': innerWidth < 630 }"
+        class="text-black text-4xl"
+        >ABOUT MYSELF</span
+      >
+      <div class="my-2" [ngClass]="{ 'my-5': innerWidth >= 630 }">
+        <p
+          [ngClass]="{
+            'text-popstar/[0.6] ': color,
+            'text-glaucous/[0.6] ': !color
+          }"
+        >
+          <span [ngClass]="{ 'text-xl': innerWidth < 630 }" class="text-3xl"
+            >P</span
+          >assionate about design. Keep scrolling down on Instagram to find a
+          post with a new technique or idea (font, colour scheme), and want to
+          be a stand-alone UI/UX designer.
+        </p>
+        <p
+          [ngClass]="{
+            'text-popstar/[0.6] ': color,
+            'text-glaucous/[0.6] ': !color
+          }"
+        >
+          <span [ngClass]="{ 'text-xl': innerWidth < 630 }" class="text-3xl"
+            >S</span
+          >o, you can say I'm a highly motivated web developer with design
+          skills who likes to work hard and try every possible means to complete
+          the work.
+        </p>
+      </div>
+    </div>
+    <div
+      class="text-sm font-medium mb-20"
+      [ngClass]="{
+        'text-2xl my-10': innerWidth >= 630
+      }"
+    >
+      <p>
+        Joined Earth Network On <span class="text-white">02 Feb 2003</span>.
+      </p>
+      <div class="flex my-2 items-center">
+        <img src="../../../assets/images/about_page/college.svg" alt="" />
+        <span class="ml-3">Shri Shankaracharya Technical Campus, Bhilai</span>
+      </div>
+      <div class="flex my-2 items-center">
+        <img src="../../../assets/images/about_page/email.svg" alt="" />
+        <span class="ml-3">sahuprakhar022003@gmail.com</span>
+      </div>
+      <div class="flex my-2 items-center">
+        <img src="../../../assets/images/about_page/phone.svg" alt="" />
+        <span class="ml-3">+91 9826412657</span>
+      </div>
+    </div>
+  </div>
+
+  <!--RULE -->
+  <hr *ngIf="innerWidth > 1100" class="h-96 mx-20 border-2" />
+
+  <!-- RIGHT-->
+  <div>
+    <span
+      [ngClass]="{ 'text-xl': innerWidth < 630 }"
+      class="font-bold text-4xl text-black"
+      >SKILLS</span
+    >
+    <div
+      class="text-sm font-medium"
+      [ngClass]="{
+        'text-2xl': innerWidth >= 630
+      }"
+    >
+      <div class="flex my-4 items-center font-medium">
+        <img src="../../../assets/images/about_page/web.svg" alt="" />
+        <span class="mx-2 ml-4">HTML</span>
+        <span class="mx-2">CSS</span>
+        <span class="mx-2">JAVASCRIPT</span>
+        <span class="mx-2 mr-4">TYPESCRIPT</span>
+      </div>
+      <div class="flex my-4 items-center">
+        <img src="../../../assets/images/about_page/database.svg" alt="" />
+        <span class="mx-2 ml-4">MYSQL</span>
+        <span class="mx-2 mr-4">MONGODB</span>
+      </div>
+      <div class="flex my-4 items-center">
+        <img src="../../../assets/images/about_page/framework.svg" alt="" />
+        <span class="mx-2 ml-4">REACT</span>
+        <span class="mx-2 mr-4">ANGULAR</span>
+      </div>
+      <div class="flex my-4 items-center">
+        <img src="../../../assets/images/about_page/programming.svg" alt="" />
+        <span class="mx-2 ml-4">C</span>
+        <span class="mx-2">C++</span>
+        <span class="mx-2 mr-4">JAVA</span>
+      </div>
+      <div class="flex my-4 items-center">
+        <img src="../../../assets/images/about_page/graphic.svg" alt="" />
+        <span class="mx-2 ml-3">FIGMA</span>
+        <span class="mx-2">CANVA</span>
+        <span class="mx-2 mr-4">ILLUSTRATOR</span>
+      </div>
+    </div>
+  </div>
+</section>

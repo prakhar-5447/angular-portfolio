@@ -2,7 +2,9 @@
 <section
   [ngClass]="{
     'flex-col pr-20 pl-3 py-20': innerWidth < 1110,
-    'items-center py-52': innerWidth >= 1110
+    'items-center py-52': innerWidth >= 1110,
+    'text-popstar/[0.6] ': color,
+    'text-glaucous/[0.6] ': !color
   }"
   id="HOME"
   class="flex justify-center"
@@ -35,12 +37,7 @@
         | UI/UX</span
       >
     </p>
-    <p
-      [ngClass]="{
-        'text-popstar/[0.6] ': color,
-        'text-glaucous/[0.6] ': !color
-      }"
-    >
+    <p>
       Designers have ideas, and developers are skilled.<br />
       They are Different
     </p>
