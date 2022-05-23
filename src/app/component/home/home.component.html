@@ -1,11 +1,11 @@
 <!-- HOME -->
 <section
   [ngClass]="{
-    'flex-col pr-20 pl-3': innerWidth < 1110,
-    'items-center': innerWidth >= 1110
+    'flex-col pr-20 pl-3 py-20': innerWidth < 1110,
+    'items-center py-52': innerWidth >= 1110
   }"
   id="HOME"
-  class="h-screen flex justify-center"
+  class="flex justify-center"
 >
   <div [ngClass]="{ 'h-1/2': innerWidth >= 1110 }">
     <img

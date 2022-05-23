@@ -29,10 +29,7 @@
   </div>
 
   <!-- NAV AND COMPONENTS -->
-  <div
-    id="tab"
-    class="flex flex-col w-full md:container md:mx-auto"
-  >
+  <div id="tab" class="flex flex-col w-full md:container md:mx-auto">
     <!-- NAVBAR -->
     <nav
       *ngIf="innerWidth >= 1110"
@@ -46,13 +43,13 @@
           <a (click)="scroll(height)" class="cursor-pointer">CONTACT</a>
         </li>
         <li class="WORK mx-16">
-          <a (click)="scroll(height / 2)" class="cursor-pointer">WORK</a>
+          <a (click)="scroll(height / 2 - 200)" class="cursor-pointer">WORK</a>
         </li>
         <li class="PROJECT mx-16">
           <a (click)="scroll(height / 3)" class="cursor-pointer">PROJECT</a>
         </li>
         <li class="ABOUT mx-16">
-          <a (click)="scroll(height / 6)" class="cursor-pointer">ABOUT</a>
+          <a (click)="scroll(height / 7)" class="cursor-pointer">ABOUT</a>
         </li>
         <li class="HOME mx-16 mr-32 active">
           <a (click)="scroll(0)" class="cursor-pointer">HOME</a>
@@ -64,16 +61,16 @@
     <app-home [color]="color" [innerWidth]="innerWidth"></app-home>
 
     <!-- ABOUT -->
-    <app-about></app-about>
+    <app-about [color]="color" [innerWidth]="innerWidth"></app-about>
 
     <!-- PROJECT -->
-    <app-project></app-project>
+    <app-project [color]="color" [innerWidth]="innerWidth"></app-project>
 
     <!-- WORK -->
-    <app-work></app-work>
+    <app-work [color]="color" [innerWidth]="innerWidth"></app-work>
 
     <!-- CONTACT -->
-    <app-contact></app-contact>
+    <app-contact [color]="color" [innerWidth]="innerWidth"></app-contact>
   </div>
 
   <!-- TOGGLE -->

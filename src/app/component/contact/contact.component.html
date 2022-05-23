@@ -1,4 +1,11 @@
 <!-- CONTACT -->
-<section id="CONTACT" class="h-screen flex justify-center items-center">
+<section
+  [ngClass]="{
+    'flex-col pr-20 pl-3 py-20': innerWidth < 1110,
+    'items-center py-52': innerWidth >= 1110
+  }"
+  id="CONTACT"
+  class="flex justify-center"
+>
   CONTACT
 </section>
