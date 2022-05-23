@@ -28,23 +28,44 @@
 
   <!-- NAVBAR -->
   <nav
-    class="nav_bar w-full h-16 flex items-center justify-end overflow-hidden transition-colors ease-in-out delay-100 select-none"
+    class="nav_bar w-full h-16 flex items-center justify-end transition-colors ease-in-out delay-100 select-none"
   >
-    <ul class="flex py-6 snap-x">
-      <li class="CONTACT mx-16 ml-32 snap-center">
+    <ul class="flex py-6">
+      <li class="CONTACT mx-16 ml-32">
         <a (click)="scrollDown()" class="cursor-pointer">CONTACT</a>
       </li>
-      <li class="WORK mx-16 snap-center">
+      <li class="WORK mx-16">
         <a (click)="scrollMidDown()" class="cursor-pointer">WORK</a>
       </li>
-      <li class="PROJECT mx-16 snap-center">
+      <li class="PROJECT mx-16">
         <a (click)="scrollMid()" class="cursor-pointer">PROJECT</a>
       </li>
-      <li class="ABOUT mx-16 snap-center">
+      <li class="ABOUT mx-16">
         <a (click)="scrollMidUp()" class="cursor-pointer">ABOUT</a>
       </li>
-      <li class="HOME mx-16 mr-32 active snap-center">
+      <li class="HOME mx-16 mr-32 active">
         <a (click)="scrollUp()" class="cursor-pointer">HOME</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- TOGGLE -->
+  <nav *ngIf="show" class="absolute inset-0 flex items-center justify-center select-none bg-black/[0.5]">
+    <ul class="flex flex-col text-center">
+      <li class="HOME my-2 mt-4">
+        <a (click)="scrollUp()" class="cursor-pointer">HOME</a>
+      </li>
+      <li class="ABOUT my-2">
+        <a (click)="scrollMidUp()" class="cursor-pointer">ABOUT</a>
+      </li>
+      <li class="PROJECT my-2">
+        <a (click)="scrollMid()" class="cursor-pointer">PROJECT</a>
+      </li>
+      <li class="WORK my-2">
+        <a (click)="scrollMidDown()" class="cursor-pointer">WORK</a>
+      </li>
+      <li class="CONTACT my-2 mb-4">
+        <a (click)="scrollDown()" class="cursor-pointer">CONTACT</a>
       </li>
     </ul>
   </nav>
@@ -53,46 +74,14 @@
   <div
     class="right_bar bg-black/[0.5] w-16 h-full flex justify-center items-center"
   >
-    <div *ngIf="innerWidth<1024" class="absolute top-3">
-      <button mat-icon-button (click)="show_hide()">
+    <div *ngIf="innerWidth<=1024" class="absolute top-3">
+      <button mat-icon-button (click)="toogle()">
         <mat-icon>more_vert</mat-icon>
       </button>
     </div>
-    <div *ngIf="!show" class="flex flex-col justify-center items-center">
-      <img
-        (click)="scrollUp()"
-        class="HOME my-2"
-        src="../assets/images/nav/home.svg"
-        alt=""
-      />
-      <img
-        (click)="scrollMidUp()"
-        class="ABOUT my-2"
-        src="../assets/images/nav/about.svg"
-        alt=""
-      />
-      <img
-        (click)="scrollMid()"
-        class="PROJECT my-2"
-        src="../assets/images/nav/project.svg"
-        alt=""
-      />
-      <img
-        (click)="scrollMidDown()"
-        class="WORK my-2"
-        src="../assets/images/nav/work.svg"
-        alt=""
-      />
-      <img
-        (click)="scrollDown()"
-        class="CONTACT my-2"
-        src="../assets/images/nav/contact.svg"
-        alt=""
-      />
-    </div>
 
     <!-- SOCIALS -->
-    <div *ngIf="show" class="flex flex-col justify-center items-center">
+    <div class="flex flex-col justify-center items-center">
       <!-- LINKEDIN -->
       <a
         href="https://www.linkedin.com/in/prakhar-sahu-4519b8206"
@@ -129,7 +118,7 @@
 
     <!-- COLOR -->
     <div
-      *ngIf="!color"
+      *ngIf="!color; else change"
       class="absolute bottom-5 flex flex-col justify-center items-center cursor-pointer"
     >
       <img
@@ -140,18 +129,18 @@
       />
       <img src="../assets/images/buttons/grey_circle.svg" alt="" />
     </div>
-    <div
-      *ngIf="color"
-      class="absolute bottom-0 flex flex-col justify-center items-center mb-5 cursor-pointer"
-    >
-      <img
-        (click)="change_color()"
-        class="absolute"
-        src="../assets/images/buttons/grey_btn.svg"
-        alt=""
-      />
-      <img src="../assets/images/buttons/piglet_circle.svg" alt="" />
-    </div>
+    <ng-template #change
+      ><div
+        class="absolute bottom-0 flex flex-col justify-center items-center mb-5 cursor-pointer"
+      >
+        <img
+          (click)="change_color()"
+          class="absolute"
+          src="../assets/images/buttons/grey_btn.svg"
+          alt=""
+        />
+        <img src="../assets/images/buttons/piglet_circle.svg" alt="" /></div
+    ></ng-template>
   </div>
 </div>
 

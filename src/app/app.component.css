@@ -14,10 +14,7 @@
   }
   .right_bar {
     position: fixed;
-    right: 0; 
-  }
-  nav_side_bar {
-    display: inline-block;
+    right: 0;
   }
 }
 

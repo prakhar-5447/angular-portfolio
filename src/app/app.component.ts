@@ -9,15 +9,22 @@ export class AppComponent {
   document!: HTMLElement;
   title = 'angular-portfolio';
   color: boolean = true;
-  show: boolean = true;
+  show: boolean = false;
   innerWidth!: number;
 
   constructor() {
     document.body.classList.add('bg-gradient-to-b');
     document.body.classList.add('from-mauvelous');
     document.body.classList.add('to-pale-pink');
+    this.onResize();
   }
 
+  // TOGGLE SIDE NAVBAR
+  toogle(): void {
+    this.show = !this.show;
+  }
+
+  // CHANGE COLOR
   change_color(): void {
     this.color = !this.color;
     if (this.color) {
@@ -35,10 +42,6 @@ export class AppComponent {
       document.body.classList.add('from-wild-blue-yonder');
       document.body.classList.add('to-mint-cream');
     }
-  }
-
-  show_hide() {
-    this.show = !this.show;
   }
 
   // SCROLL
