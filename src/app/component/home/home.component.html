@@ -1,4 +1,23 @@
 <!-- HOME -->
-<section id="HOME" class="h-screen flex justify-center items-center">
-  HOME
+<section id="HOME" class="h-screen flex items-center">
+  <div><img src="../../../assets/images/prakhar.png" alt="" /></div>
+  <div class="font-medium text-2xl">
+    <span class="text-6xl">PRAKHAR SAHU</span>
+    <p>
+      <span class="text-white">Full Stack Web Developer</span>
+      <span
+        [ngClass]="{ 'text-mauvelous': color, 'text-wild-blue-yonder': !color }"
+        >| UI/UX</span
+      >
+    </p>
+    <p
+      [ngClass]="{
+        'text-mauvelous/[0.8]': color,
+        'text-wild-blue-yonder/[0.8]': !color
+      }"
+    >
+      Designers have ideas, and developers are skilled. They are Different
+    </p>
+    <button class="cursor-pointer"><a (click)="scrollMidUp()" class="cursor-pointer">Let's go &rarr;</a></button>
+  </div>
 </section>

@@ -8,6 +8,7 @@ import { Component, HostListener } from '@angular/core';
 export class AppComponent {
   document!: HTMLElement;
   title = 'angular-portfolio';
+  height: number=0;
   color: boolean = true;
   show: boolean = false;
   innerWidth!: number;
@@ -17,6 +18,9 @@ export class AppComponent {
     document.body.classList.add('from-mauvelous');
     document.body.classList.add('to-pale-pink');
     this.onResize();
+    for (let i = 0; i <= 5; i++) {
+      this.height=this.height + document.body.clientHeight;      
+    }
   }
 
   // TOGGLE SIDE NAVBAR
@@ -45,32 +49,18 @@ export class AppComponent {
   }
 
   // SCROLL
-  scrollUp() {
-    window.scrollTo(0, 0);
-  }
-
-  scrollMid() {
-    window.scrollTo(0, document.body.scrollHeight / 2 - 450);
-  }
-
-  scrollDown() {
-    window.scrollTo(0, document.body.scrollHeight);
-  }
-  scrollMidUp() {
-    window.scrollTo(0, document.body.scrollHeight / 5);
-  }
-  scrollMidDown() {
-    window.scrollTo(0, document.body.scrollHeight / 2 + 450);
+  scroll(y: number) {
+    window.scrollTo(0, y);
   }
 
   // AUTO ACTIVE LINK ON SCROLL
   @HostListener('window:scroll', [])
   onScroll(): void {
     if (window.pageYOffset > 100) {
-      document.querySelector('nav')!.classList.add('bg-black');
+      document.getElementById('ul')?.classList.add('bg-black');
     } else {
-      if (document.querySelector('nav')!.classList.contains('bg-black'))
-        document.querySelector('nav')!.classList.remove('bg-black');
+      if (document.getElementById('ul')?.classList.contains('bg-black'))
+        document.getElementById('ul')?.classList.remove('bg-black');
     }
 
     const sections = document.querySelectorAll('section');
