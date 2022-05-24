@@ -35,7 +35,7 @@ export class ProjectComponent implements OnInit {
     },
     {
       image: '../../../assets/images/project_page/Juicy-N-Yummy.png',
-      link: 'https://github.com/prakhar-5447/Juicy-N-Yummy',
+      link: 'https://github.com/pratham-0094/Juicy-N-Yummy',
       title: 'Juicy-N-Yummy',
     },
   ];

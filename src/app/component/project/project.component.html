@@ -1,13 +1,13 @@
 <!-- PROJECT -->
 <section
   [ngClass]="{
-    'flex-col pr-20 pl-3 py-20': innerWidth < 1110,
-    'py-44': innerWidth >= 1110
+    'pr-20 pl-3 py-20': innerWidth < 1110,
+    'py-32': innerWidth >= 1110
   }"
   id="PROJECT"
   class="h-screen flex flex-col justify-center"
 >
-  <div class="flex items-center mr-5 justify-center">
+  <div class="flex items-center mr-5 mb-5 justify-center">
     <span
       [ngClass]="{ 'text-2xl': innerWidth < 630 }"
       class="font-bold text-5xl text-black"
@@ -22,9 +22,20 @@
       'grid-cols-1 gap-1': innerWidth < 630
     }"
   >
-    <div *ngFor="let i of projects" class="">
-      <img src="{{ i.image }}" alt="" />
-      <span></span>
-    </div>
+    <a
+      *ngFor="let i of projects"
+      class="relative border-2"
+      href="{{ i.link }}"
+      target="_blank"
+    >
+      <img class="absolute inset-0 w-full h-full" src="{{ i.image }}" alt="" />
+      <div
+        class="w-full h-full bg-black/[0.6] flex justify-center items-center absolute"
+      >
+        <span [ngClass]="{ 'text-2xl': innerWidth >= 630 }" class="text-sm">{{
+          i.title
+        }}</span>
+      </div>
+    </a>
   </div>
 </section>
