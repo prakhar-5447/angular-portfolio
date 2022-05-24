@@ -1,4 +1,120 @@
 <!-- CONTACT -->
-<section id="CONTACT" class="h-screen flex justify-center items-center">
-  CONTACT
+<section
+  [ngClass]="{
+    'flex-col pr-20 pl-3 py-24': innerWidth < 1110,
+    'py-56': innerWidth >= 1110,
+    'text-popstar/[0.6] ': color,
+    'text-glaucous/[0.6] ': !color
+  }"
+  id="CONTACT"
+  class="flex justify-center"
+>
+  <!--LEFT -->
+  <div>
+    <span
+      [ngClass]="{ 'text-5xl': innerWidth >= 630 }"
+      class="font-bold text-2xl text-black"
+      >CONTACT</span
+    >
+    <div class="flex my-2 items-center">
+      <img src="../../../assets/images/contact_page/location.svg" alt="" />
+      <span
+        [ngClass]="{
+          'text-sm': innerWidth < 630
+        }"
+        class="ml-3 text-2xl"
+        >Deepti Vihar Colony, Janjgir-Champa, Chhattishgarh</span
+      >
+    </div>
+    <div
+      class="text-black mt-20"
+      [ngClass]="{
+        'my-10': innerWidth < 1110
+      }"
+    >
+      <p
+        [ngClass]="{
+          'text-sm': innerWidth < 630
+        }"
+        class="text-2xl font-bold"
+      >
+        If you need a helping hand, please don't hesitate to contact me.
+      </p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d924.7734846068456!2d82.59459422923473!3d22.0077113424754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a27bfe314bed537%3A0xc086f73e24e805fe!2sDeepti%20Vihar%20Colony!5e0!3m2!1sen!2sin!4v1653379097680!5m2!1sen!2sin"
+        width="320"
+        height="300"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        [ngClass]="{
+          'w-full': innerWidth >= 630
+        }"
+      ></iframe>
+    </div>
+  </div>
+
+  <!--RULE -->
+  <hr *ngIf="innerWidth > 1100" class="h-96 mx-20 border" />
+
+  <!--RIGHT -->
+  <form
+    class="flex flex-col text-white"
+    [ngClass]="{
+      'w-2/5': innerWidth >= 1110
+    }"
+  >
+    <div class="flex justify-between">
+      <input
+        type="text"
+        [ngClass]="{
+          'bg-popstar/[0.3] border-popstar placeholder:text-popstar': color,
+          'bg-glaucous/[0.3] border-glaucous placeholder:text-glaucous': !color
+        }"
+        class="w-full outline-none text-sm border rounded-md px-5 py-3 my-3"
+        placeholder="Name"
+      />
+      <input
+        type="text"
+        [ngClass]="{
+          'bg-popstar/[0.3] border-popstar placeholder:text-popstar': color,
+          'bg-glaucous/[0.3] border-glaucous placeholder:text-glaucous': !color
+        }"
+        class="w-full outline-none text-sm border rounded-md px-5 py-3 my-3 ml-4"
+        placeholder="Email"
+      />
+    </div>
+    <input
+      type="text"
+      [ngClass]="{
+        'bg-popstar/[0.3] border-popstar placeholder:text-popstar': color,
+        'bg-glaucous/[0.3] border-glaucous placeholder:text-glaucous': !color
+      }"
+      class="w-full outline-none text-sm border rounded-md px-5 py-3 my-3"
+      placeholder="Subject"
+    />
+    <textarea
+      type="textarea"
+      [ngClass]="{
+        'bg-popstar/[0.3] border-popstar placeholder:text-popstar': color,
+        'bg-glaucous/[0.3] border-glaucous placeholder:text-glaucous': !color
+      }"
+      class="w-full outline-none text-sm resize-none border rounded-md px-5 py-3 my-3"
+      placeholder="Write a message"
+      rows="10"
+    ></textarea>
+    <button
+      [ngClass]="{
+        'border-popstar hover:bg-popstar ': color,
+        'border-glaucous hover:bg-glaucous ': !color,
+        'text-2xl': innerWidth >= 630,
+        'text-sm': innerWidth < 630
+      }"
+      class="mx-auto cursor-pointer my-5 py-2 px-10 border-2 rounded-lg text-white"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
 </section>
