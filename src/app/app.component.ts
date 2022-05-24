@@ -8,7 +8,6 @@ import { Component, HostListener } from '@angular/core';
 export class AppComponent {
   document!: HTMLElement;
   title = 'angular-portfolio';
-  height: number=0;
   color: boolean = true;
   show: boolean = false;
   innerWidth!: number;
@@ -18,10 +17,12 @@ export class AppComponent {
     document.body.classList.add('from-mauvelous');
     document.body.classList.add('to-pale-pink');
     this.onResize();
-    // for (let i = 0; i <= 5; i++) {
-    //   this.height=this.height + document.body.scrollHeight;      
-    // }
-    this.height=this.height + document.body.scrollHeight;      
+  }
+
+  click(tag: string) {
+    let section = document.getElementById(tag);
+    let height = section?.offsetTop || 0;
+    window.scrollTo(0, height);
   }
 
   // TOGGLE SIDE NAVBAR
@@ -47,11 +48,6 @@ export class AppComponent {
       document.body.classList.add('from-wild-blue-yonder');
       document.body.classList.add('to-mint-cream');
     }
-  }
-
-  // SCROLL
-  scroll(y: number) {
-    window.scrollTo(0, y);
   }
 
   // AUTO ACTIVE LINK ON SCROLL

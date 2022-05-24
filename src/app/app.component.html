@@ -11,7 +11,7 @@
       <img
         class="cursor-pointer"
         src="../assets/images/mouse/ArrowUp.svg"
-        (click)="scroll(0)"
+        (click)="click('HOME')"
         alt=""
       />
 
@@ -22,7 +22,7 @@
       <img
         class="cursor-pointer"
         src="../assets/images/mouse/ArrowDown.svg"
-        (click)="scroll(height * 5)"
+        (click)="click('CONTACT')"
         alt=""
       />
     </div>
@@ -40,21 +40,19 @@
     >
       <ul id="ul" class="w-full flex justify-end py-6">
         <li class="CONTACT mx-16 ml-32">
-          <a (click)="scroll(height * 4)" class="cursor-pointer">CONTACT</a>
+          <a (click)="click('CONTACT')" class="cursor-pointer">CONTACT</a>
         </li>
         <li class="WORK mx-16">
-          <a (click)="scroll(height * 3 - 200)" class="cursor-pointer">WORK</a>
+          <a (click)="click('WORK')" class="cursor-pointer">WORK</a>
         </li>
         <li class="PROJECT mx-16">
-          <a (click)="scroll(height * 2 - 250)" class="cursor-pointer"
-            >PROJECT</a
-          >
+          <a (click)="click('PROJECT')" class="cursor-pointer">PROJECT</a>
         </li>
         <li class="ABOUT mx-16">
-          <a (click)="scroll(height - 200)" class="cursor-pointer">ABOUT</a>
+          <a (click)="click('ABOUT')" class="cursor-pointer">ABOUT</a>
         </li>
         <li class="HOME mx-16 mr-32 active">
-          <a (click)="scroll(0)" class="cursor-pointer">HOME</a>
+          <a (click)="click('HOME')" class="cursor-pointer">HOME</a>
         </li>
       </ul>
     </nav>
@@ -82,19 +80,19 @@
   >
     <ul class="flex bg-transparent flex-col text-center">
       <li class="HOME my-2 mt-4">
-        <a (click)="scroll(0)" class="cursor-pointer">HOME</a>
+        <a (click)="click('HOME')" class="cursor-pointer">HOME</a>
       </li>
       <li class="ABOUT my-2">
-        <a (click)="scroll(height)" class="cursor-pointer">ABOUT</a>
+        <a (click)="click('ABOUT')" class="cursor-pointer">ABOUT</a>
       </li>
       <li class="PROJECT my-2">
-        <a (click)="scroll(height * 2 + 200)" class="cursor-pointer">PROJECT</a>
+        <a (click)="click('PROJECT')" class="cursor-pointer">PROJECT</a>
       </li>
       <li class="WORK my-2">
-        <a (click)="scroll(height * 3 + 300)" class="cursor-pointer">WORK</a>
+        <a (click)="click('WORK')" class="cursor-pointer">WORK</a>
       </li>
       <li class="CONTACT my-2 mb-4">
-        <a (click)="scroll(height * 4 + 300)" class="cursor-pointer">CONTACT</a>
+        <a (click)="click('CONTACT')" class="cursor-pointer">CONTACT</a>
       </li>
     </ul>
   </nav>
