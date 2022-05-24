@@ -40,16 +40,18 @@
     >
       <ul id="ul" class="w-full flex justify-end py-6">
         <li class="CONTACT mx-16 ml-32">
-          <a (click)="scroll(height)" class="cursor-pointer">CONTACT</a>
+          <a (click)="scroll(height * 4)" class="cursor-pointer">CONTACT</a>
         </li>
         <li class="WORK mx-16">
-          <a (click)="scroll(height / 2 - 200)" class="cursor-pointer">WORK</a>
+          <a (click)="scroll(height * 3 - 200)" class="cursor-pointer">WORK</a>
         </li>
         <li class="PROJECT mx-16">
-          <a (click)="scroll(height / 3)" class="cursor-pointer">PROJECT</a>
+          <a (click)="scroll(height * 2 - 250)" class="cursor-pointer"
+            >PROJECT</a
+          >
         </li>
         <li class="ABOUT mx-16">
-          <a (click)="scroll(height / 7)" class="cursor-pointer">ABOUT</a>
+          <a (click)="scroll(height - 200)" class="cursor-pointer">ABOUT</a>
         </li>
         <li class="HOME mx-16 mr-32 active">
           <a (click)="scroll(0)" class="cursor-pointer">HOME</a>
@@ -75,7 +77,7 @@
 
   <!-- TOGGLE -->
   <nav
-    *ngIf="show"
+    *ngIf="show && innerWidth < 1100"
     class="fixed h-full w-full top-0 flex items-center justify-center select-none bg-black/[0.5]"
   >
     <ul class="flex bg-transparent flex-col text-center">
@@ -83,16 +85,16 @@
         <a (click)="scroll(0)" class="cursor-pointer">HOME</a>
       </li>
       <li class="ABOUT my-2">
-        <a (click)="scroll(height / 6)" class="cursor-pointer">ABOUT</a>
+        <a (click)="scroll(height)" class="cursor-pointer">ABOUT</a>
       </li>
       <li class="PROJECT my-2">
-        <a (click)="scroll(height / 3)" class="cursor-pointer">PROJECT</a>
+        <a (click)="scroll(height * 2 + 200)" class="cursor-pointer">PROJECT</a>
       </li>
       <li class="WORK my-2">
-        <a (click)="scroll(height / 2)" class="cursor-pointer">WORK</a>
+        <a (click)="scroll(height * 3 + 300)" class="cursor-pointer">WORK</a>
       </li>
       <li class="CONTACT my-2 mb-4">
-        <a (click)="scroll(height)" class="cursor-pointer">CONTACT</a>
+        <a (click)="scroll(height * 4 + 300)" class="cursor-pointer">CONTACT</a>
       </li>
     </ul>
   </nav>

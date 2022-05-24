@@ -18,9 +18,10 @@ export class AppComponent {
     document.body.classList.add('from-mauvelous');
     document.body.classList.add('to-pale-pink');
     this.onResize();
-    for (let i = 0; i <= 5; i++) {
-      this.height=this.height + document.body.clientHeight;      
-    }
+    // for (let i = 0; i <= 5; i++) {
+    //   this.height=this.height + document.body.scrollHeight;      
+    // }
+    this.height=this.height + document.body.scrollHeight;      
   }
 
   // TOGGLE SIDE NAVBAR
@@ -56,7 +57,7 @@ export class AppComponent {
   // AUTO ACTIVE LINK ON SCROLL
   @HostListener('window:scroll', [])
   onScroll(): void {
-    if (window.pageYOffset > 100) {
+    if (window.pageYOffset > 50) {
       document.getElementById('ul')?.classList.add('bg-black');
     } else {
       if (document.getElementById('ul')?.classList.contains('bg-black'))

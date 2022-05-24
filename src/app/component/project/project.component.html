@@ -1,4 +1,30 @@
 <!-- PROJECT -->
-<section id="PROJECT" class="h-screen flex justify-center items-center">
-  PROJECT
+<section
+  [ngClass]="{
+    'flex-col pr-20 pl-3 py-20': innerWidth < 1110,
+    'py-44': innerWidth >= 1110
+  }"
+  id="PROJECT"
+  class="h-screen flex flex-col justify-center"
+>
+  <div class="flex items-center mr-5 justify-center">
+    <span
+      [ngClass]="{ 'text-2xl': innerWidth < 630 }"
+      class="font-bold text-5xl text-black"
+      >PROJECTS</span
+    >
+  </div>
+  <div
+    class="overflow-y-auto h-full w-full grid bg-white p-10"
+    [ngClass]="{
+      'grid-cols-3 gap-4': innerWidth >= 1110,
+      'grid-cols-2 gap-2': innerWidth < 1110,
+      'grid-cols-1 gap-1': innerWidth < 630
+    }"
+  >
+    <div *ngFor="let i of projects" class="">
+      <img src="{{ i.image }}" alt="" />
+      <span></span>
+    </div>
+  </div>
 </section>
