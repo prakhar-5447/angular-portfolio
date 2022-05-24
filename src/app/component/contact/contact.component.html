@@ -1,7 +1,7 @@
 <!-- CONTACT -->
 <section
   [ngClass]="{
-    'flex-col pr-20 pl-3 py-24': innerWidth < 1110,
+    'flex-col pr-20 pl-3 py-20': innerWidth < 1110,
     'py-56': innerWidth >= 1110,
     'text-popstar/[0.6] ': color,
     'text-glaucous/[0.6] ': !color
@@ -12,31 +12,31 @@
   <!--LEFT -->
   <div>
     <span
-      [ngClass]="{ 'text-5xl': innerWidth >= 630 }"
-      class="font-bold text-2xl text-black"
+      [ngClass]="{ 'text-2xl': innerWidth < 630 }"
+      class="font-bold text-5xl text-black"
       >CONTACT</span
     >
     <div class="flex my-2 items-center">
       <img src="../../../assets/images/contact_page/location.svg" alt="" />
       <span
         [ngClass]="{
-          'text-sm': innerWidth < 630
+          'text-2xl': innerWidth >= 630
         }"
-        class="ml-3 text-2xl"
+        class="ml-3 text-sm"
         >Deepti Vihar Colony, Janjgir-Champa, Chhattishgarh</span
       >
     </div>
     <div
-      class="text-black mt-20"
+      class="text-black my-10"
       [ngClass]="{
-        'my-10': innerWidth < 1110
+        'mt-28': innerWidth >= 1110
       }"
     >
       <p
         [ngClass]="{
-          'text-sm': innerWidth < 630
+          'text-2xl': innerWidth >= 630
         }"
-        class="text-2xl font-bold"
+        class="text-sm font-bold"
       >
         If you need a helping hand, please don't hesitate to contact me.
       </p>

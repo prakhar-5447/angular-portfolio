@@ -1,4 +1,60 @@
 <!-- WORK -->
-<section id="WORK" class="h-screen flex justify-center items-center">
-  WORK
+<section
+  [ngClass]="{
+    'flex-col pr-20 pl-3': innerWidth < 1110,
+    '': innerWidth >= 1110,
+    'text-popstar/[0.6] ': color,
+    'text-glaucous/[0.6] ': !color
+  }"
+  id="WORK"
+  class="flex h-screen justify-center items-center"
+>
+  <!--LEFT -->
+  <div [ngClass]="{ 'w-2/5': innerWidth >= 630 }" class="my-10">
+    <span
+      [ngClass]="{ 'text-2xl': innerWidth < 630 }"
+      class="font-bold text-5xl text-black"
+      >ART GALLARY</span
+    >
+    <div class="flex my-2 items-center">
+      <img class="invert" src="../../../assets/images/socials/instagram.svg" alt="" />
+      <span
+        [ngClass]="{
+          'text-2xl': innerWidth >= 630
+        }"
+        class="ml-3 text-sm"
+        >pixel8cloud</span
+      >
+    </div>
+    <p
+      [ngClass]="{
+        'text-2xl': innerWidth >= 630
+      }"
+      class="text-sm font-bold"
+    >
+      A place to show off my work. There are various templates for websites,
+      thumbnails, logos and posters.
+    </p>
+  </div>
+
+  <!--RULE -->
+  <hr *ngIf="innerWidth > 1100" class="h-1/2 mx-20 border" />
+
+  <!--RIGHT -->
+
+  <div
+    [ngClass]="{ 'w-3/6 py-2 h-4/5': innerWidth >= 630 }"
+    class="overflow-y-auto h-96 bg-white"
+  >
+    <div
+      class="tagembed-container p-3"
+      style="width: 100%; height: 100%; overflow: auto"
+    >
+      <div
+        class="tagembed-socialwall"
+        data-wall-id="42925"
+        view-url="https://widget.tagembed.com/42925?view"
+      ></div>
+    </div>
+  </div>
 </section>

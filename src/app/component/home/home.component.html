@@ -24,8 +24,8 @@
   </div>
   <div class="font-medium">
     <span
-      [ngClass]="{ 'text-7xl': innerWidth >= 630 }"
-      class="text-black text-4xl"
+      [ngClass]="{ 'text-4xl': innerWidth < 630 }"
+      class="text-black text-7xl"
       >PRAKHAR SAHU</span
     >
     <p>
@@ -40,15 +40,17 @@
       <span
         [ngClass]="{
           'text-3xl': innerWidth >= 630,
-          'text-lg': innerWidth < 630
+          'text-lg': innerWidth < 630,
+          'text-popstar': color,
+          'text-glaucous': !color
         }"
-        class="text-white"
       >
         | UI/UX</span
       >
     </p>
     <span
-     class="block" [ngClass]="{ 'text-3xl': innerWidth >= 630, 'text-lg': innerWidth < 630 }"
+      class="block"
+      [ngClass]="{ 'text-3xl': innerWidth >= 630, 'text-lg': innerWidth < 630 }"
     >
       Designers have ideas, and developers are skilled.<br />
       They are Different
@@ -61,7 +63,11 @@
       }"
       class="cursor-pointer my-5 py-3 px-6 border-2 rounded-lg text-white"
     >
-      <a [ngClass]="{ 'text-3xl': innerWidth >= 630, 'text-lg': innerWidth < 630 }"
+      <a
+        [ngClass]="{
+          'text-3xl': innerWidth >= 630,
+          'text-lg': innerWidth < 630
+        }"
         >Let's go &rarr;</a
       >
     </button>

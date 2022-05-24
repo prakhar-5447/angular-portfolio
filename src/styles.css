@@ -8,12 +8,12 @@
   box-sizing: border-box;
 }
 
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 0;
   display: none;
 }
 
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   display: none;
 }
 
@@ -55,5 +55,11 @@ body {
   }
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

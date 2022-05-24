@@ -13,8 +13,8 @@
   <div class="flex flex-col">
     <div class="font-bold text-sm">
       <span
-        [ngClass]="{ 'text-5xl': innerWidth >= 630 }"
-        class="text-black text-2xl"
+        [ngClass]="{ 'text-2xl': innerWidth < 630 }"
+        class="text-black text-5xl"
         >ABOUT MYSELF</span
       >
       <div class="my-2" [ngClass]="{ 'my-5 mb-20': innerWidth >= 630 }">
@@ -50,7 +50,7 @@
       class="text-sm font-medium"
       [ngClass]="{ 'mt-5 mb-10': innerWidth < 630 }"
     >
-      <p class="text-2xl" [ngClass]="{ 'text-sm': innerWidth < 630 }">
+      <p class="text-sm" [ngClass]="{ 'text-2xl': innerWidth >= 630 }">
         Joined Earth Network On <span class="text-white">02 Feb 2003</span>.
       </p>
       <div class="flex my-2 items-center">
@@ -92,14 +92,14 @@
   <!-- RIGHT-->
   <div>
     <span
-      [ngClass]="{ 'text-5xl': innerWidth >= 630 }"
-      class="font-bold text-2xl text-black"
+      [ngClass]="{ 'text-2xl': innerWidth < 630 }"
+      class="font-bold text-5xl text-black"
       >SKILLS</span
     >
     <div
-      class="text-2xl mt-10 font-medium"
+      class="text-sm mt-2 font-medium"
       [ngClass]="{
-        'text-sm mt-2': innerWidth < 630
+        'text-2xl mt-10': innerWidth > 630
       }"
     >
       <div class="flex my-5 items-center font-medium">
