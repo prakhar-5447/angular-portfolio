@@ -90,7 +90,7 @@
   <hr *ngIf="innerWidth > 1100" class="h-96 mx-20 border" />
 
   <!-- RIGHT-->
-  <div>
+  <div [ngClass]="{ 'my-10': innerWidth < 1110 }">
     <span
       [ngClass]="{ 'text-2xl': innerWidth < 630 }"
       class="font-bold text-5xl text-black"

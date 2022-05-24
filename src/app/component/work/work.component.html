@@ -17,7 +17,11 @@
       >ART GALLARY</span
     >
     <div class="flex my-2 items-center">
-      <img class="invert" src="../../../assets/images/socials/instagram.svg" alt="" />
+      <img
+        class="invert"
+        src="../../../assets/images/socials/instagram.svg"
+        alt=""
+      />
       <span
         [ngClass]="{
           'text-2xl': innerWidth >= 630
@@ -41,10 +45,9 @@
   <hr *ngIf="innerWidth > 1100" class="h-1/2 mx-20 border" />
 
   <!--RIGHT -->
-
   <div
-    [ngClass]="{ 'w-3/6 py-2 h-4/5': innerWidth >= 630 }"
-    class="overflow-y-auto h-96 bg-white"
+    [ngClass]="{ 'w-3/6 py-2 h-4/5': innerWidth >= 1110 }"
+    class="overflow-y-auto bg-white h-96"
   >
     <div
       class="tagembed-container p-3"
