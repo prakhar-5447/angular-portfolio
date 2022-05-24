@@ -11,23 +11,21 @@
 >
   <!-- LEFT -->
   <div class="flex flex-col">
-    <div
-      [ngClass]="{ 'text-2xl': innerWidth >= 630 }"
-      class="font-bold text-sm"
-    >
+    <div class="font-bold text-sm">
       <span
-        [ngClass]="{ 'text-xl': innerWidth < 630 }"
-        class="text-black text-4xl"
+        [ngClass]="{ 'text-5xl': innerWidth >= 630 }"
+        class="text-black text-2xl"
         >ABOUT MYSELF</span
       >
-      <div class="my-2" [ngClass]="{ 'my-5': innerWidth >= 630 }">
+      <div class="my-2" [ngClass]="{ 'my-5 mb-20': innerWidth >= 630 }">
         <p
           [ngClass]="{
             'text-popstar/[0.6] ': color,
-            'text-glaucous/[0.6] ': !color
+            'text-glaucous/[0.6] ': !color,
+            'text-2xl': innerWidth >= 630
           }"
         >
-          <span [ngClass]="{ 'text-xl': innerWidth < 630 }" class="text-3xl"
+          <span [ngClass]="{ 'text-5xl': innerWidth >= 630 }" class="text-2xl"
             >P</span
           >assionate about design. Keep scrolling down on Instagram to find a
           post with a new technique or idea (font, colour scheme), and want to
@@ -36,10 +34,11 @@
         <p
           [ngClass]="{
             'text-popstar/[0.6] ': color,
-            'text-glaucous/[0.6] ': !color
+            'text-glaucous/[0.6] ': !color,
+            'text-2xl': innerWidth >= 630
           }"
         >
-          <span [ngClass]="{ 'text-xl': innerWidth < 630 }" class="text-3xl"
+          <span [ngClass]="{ 'text-5xl': innerWidth >= 630 }" class="text-2xl"
             >S</span
           >o, you can say I'm a highly motivated web developer with design
           skills who likes to work hard and try every possible means to complete
@@ -48,25 +47,41 @@
       </div>
     </div>
     <div
-      class="text-sm font-medium mb-20"
-      [ngClass]="{
-        'text-2xl my-10': innerWidth >= 630
-      }"
+      class="text-sm font-medium"
+      [ngClass]="{ 'mt-5 mb-10': innerWidth < 630 }"
     >
-      <p>
+      <p class="text-2xl" [ngClass]="{ 'text-sm': innerWidth < 630 }">
         Joined Earth Network On <span class="text-white">02 Feb 2003</span>.
       </p>
       <div class="flex my-2 items-center">
         <img src="../../../assets/images/about_page/college.svg" alt="" />
-        <span class="ml-3">Shri Shankaracharya Technical Campus, Bhilai</span>
+        <span
+          [ngClass]="{
+            'text-2xl': innerWidth >= 630
+          }"
+          class="ml-3"
+          >Shri Shankaracharya Technical Campus, Bhilai</span
+        >
       </div>
       <div class="flex my-2 items-center">
         <img src="../../../assets/images/about_page/email.svg" alt="" />
-        <span class="ml-3">sahuprakhar022003@gmail.com</span>
+        <span
+          [ngClass]="{
+            'text-2xl': innerWidth >= 630
+          }"
+          class="ml-3"
+          >sahuprakhar022003@gmail.com</span
+        >
       </div>
       <div class="flex my-2 items-center">
         <img src="../../../assets/images/about_page/phone.svg" alt="" />
-        <span class="ml-3">+91 9826412657</span>
+        <span
+          [ngClass]="{
+            'text-2xl': innerWidth >= 630
+          }"
+          class="ml-3"
+          >+91 9826412657</span
+        >
       </div>
     </div>
   </div>
@@ -77,40 +92,40 @@
   <!-- RIGHT-->
   <div>
     <span
-      [ngClass]="{ 'text-xl': innerWidth < 630 }"
-      class="font-bold text-4xl text-black"
+      [ngClass]="{ 'text-5xl': innerWidth >= 630 }"
+      class="font-bold text-2xl text-black"
       >SKILLS</span
     >
     <div
-      class="text-sm font-medium"
+      class="text-2xl mt-10 font-medium"
       [ngClass]="{
-        'text-2xl': innerWidth >= 630
+        'text-sm mt-2': innerWidth < 630
       }"
     >
-      <div class="flex my-4 items-center font-medium">
+      <div class="flex my-5 items-center font-medium">
         <img src="../../../assets/images/about_page/web.svg" alt="" />
         <span class="mx-2 ml-4">HTML</span>
         <span class="mx-2">CSS</span>
         <span class="mx-2">JAVASCRIPT</span>
         <span class="mx-2 mr-4">TYPESCRIPT</span>
       </div>
-      <div class="flex my-4 items-center">
+      <div class="flex my-5 items-center">
         <img src="../../../assets/images/about_page/database.svg" alt="" />
         <span class="mx-2 ml-4">MYSQL</span>
         <span class="mx-2 mr-4">MONGODB</span>
       </div>
-      <div class="flex my-4 items-center">
+      <div class="flex my-5 items-center">
         <img src="../../../assets/images/about_page/framework.svg" alt="" />
         <span class="mx-2 ml-4">REACT</span>
         <span class="mx-2 mr-4">ANGULAR</span>
       </div>
-      <div class="flex my-4 items-center">
+      <div class="flex my-5 items-center">
         <img src="../../../assets/images/about_page/programming.svg" alt="" />
         <span class="mx-2 ml-4">C</span>
         <span class="mx-2">C++</span>
         <span class="mx-2 mr-4">JAVA</span>
       </div>
-      <div class="flex my-4 items-center">
+      <div class="flex my-5 items-center">
         <img src="../../../assets/images/about_page/graphic.svg" alt="" />
         <span class="mx-2 ml-3">FIGMA</span>
         <span class="mx-2">CANVA</span>

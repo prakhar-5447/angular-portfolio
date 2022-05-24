@@ -16,40 +16,54 @@
         'border-popstar ': color,
         'border-glaucous': !color,
         'mr-10': innerWidth >= 1110,
-        'h-52 my-2': innerWidth < 630
+        'h-52 my-10': innerWidth < 630
       }"
       class="h-full border-4 border-double"
       alt=""
     />
   </div>
-  <div
-    [ngClass]="{ 'text-lg pr-10': innerWidth < 630 }"
-    class="font-medium text-3xl"
-  >
+  <div class="font-medium">
     <span
-      [ngClass]="{ 'text-3xl': innerWidth < 630 }"
-      class="text-black text-6xl"
+      [ngClass]="{ 'text-7xl': innerWidth >= 630 }"
+      class="text-black text-4xl"
       >PRAKHAR SAHU</span
     >
     <p>
-      <span class="text-white">Full Stack Web Developer</span>
-      <span [ngClass]="{ 'text-popstar': color, 'text-glaucous': !color }">
+      <span
+        [ngClass]="{
+          'text-3xl': innerWidth >= 630,
+          'text-lg': innerWidth < 630
+        }"
+        class="text-white"
+        >Full Stack Web Developer</span
+      >
+      <span
+        [ngClass]="{
+          'text-3xl': innerWidth >= 630,
+          'text-lg': innerWidth < 630
+        }"
+        class="text-white"
+      >
         | UI/UX</span
       >
     </p>
-    <p>
+    <span
+     class="block" [ngClass]="{ 'text-3xl': innerWidth >= 630, 'text-lg': innerWidth < 630 }"
+    >
       Designers have ideas, and developers are skilled.<br />
       They are Different
-    </p>
+    </span>
     <button
       (click)="scroll()"
       [ngClass]="{
         'border-popstar hover:bg-popstar ': color,
         'border-glaucous hover:bg-glaucous ': !color
       }"
-      class="cursor-pointer py-3 px-6 border-2 rounded-lg"
+      class="cursor-pointer my-5 py-3 px-6 border-2 rounded-lg text-white"
     >
-      <a>Let's go &rarr;</a>
+      <a [ngClass]="{ 'text-3xl': innerWidth >= 630, 'text-lg': innerWidth < 630 }"
+        >Let's go &rarr;</a
+      >
     </button>
   </div>
 </section>

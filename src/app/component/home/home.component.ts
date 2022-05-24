@@ -12,6 +12,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {}
   scroll() {
-    window.scrollTo(0, document.body.scrollHeight / 5);
+    window.scrollTo(0, document.body.scrollHeight / 6);
   }
 }

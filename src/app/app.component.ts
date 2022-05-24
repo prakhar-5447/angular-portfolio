@@ -69,7 +69,7 @@ export class AppComponent {
     sections.forEach((section) => {
       let sectionTop = section.offsetTop;
       let sectionHeight = section.clientHeight;
-      if (window.pageYOffset >= sectionTop - sectionHeight / 4) {
+      if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
         current = section.getAttribute('id') ?? '';
       }
     });
