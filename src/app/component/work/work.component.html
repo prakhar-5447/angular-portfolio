@@ -11,16 +11,12 @@
   <!--LEFT -->
   <div [ngClass]="{ 'w-2/5': innerWidth >= 630 }" class="my-10">
     <span
-      [ngClass]="{ 'text-2xl': innerWidth < 630 }"
-      class="font-bold text-5xl text-black"
+      [ngClass]="{ 'text-5xl': innerWidth >= 630 }"
+      class="font-bold text-2xl text-black"
       >ART GALLARY</span
     >
     <div class="flex my-2 items-center">
-      <img
-        class="invert"
-        src="assets/images/socials/instagram.svg"
-        alt=""
-      />
+      <img class="invert" src="assets/images/socials/instagram.svg" alt="" />
       <a href="https://instagram.com/pixel8cloud">
         <span
           [ngClass]="{
@@ -43,7 +39,7 @@
   </div>
 
   <!--RULE -->
-  <hr *ngIf="innerWidth > 1100" class="h-1/2 mx-20 border" />
+  <hr *ngIf="innerWidth > 1110" class="h-1/2 mx-20 border" />
 
   <!--RIGHT -->
   <div
@@ -56,8 +52,8 @@
     >
       <div
         class="tagembed-socialwall"
-        data-wall-id="42925"
-        view-url="https://widget.tagembed.com/42925?view"
+        data-wall-id="46174"
+        view-url="https://widget.tagembed.com/46174?view"
       ></div>
     </div>
   </div>
