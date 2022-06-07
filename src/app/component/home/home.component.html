@@ -11,7 +11,7 @@
 >
   <div [ngClass]="{ 'h-1/2': innerWidth >= 1110 }">
     <img
-      src="../../../assets/images/prakhar.png"
+      src="assets/images/prakhar.png"
       [ngClass]="{
         'border-popstar ': color,
         'border-glaucous': !color,
@@ -24,8 +24,8 @@
   </div>
   <div class="font-medium">
     <span
-      [ngClass]="{ 'text-4xl': innerWidth < 630 }"
-      class="text-black text-7xl"
+      [ngClass]="{ 'text-7xl': innerWidth >= 630 }"
+      class="text-black text-4xl"
       >PRAKHAR SAHU</span
     >
     <p>
