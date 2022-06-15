@@ -1,7 +1,7 @@
 <!-- ABOUT -->
 <section
   [ngClass]="{
-    'flex-col pr-20 pl-3 py-24': innerWidth < 1110,
+    'flex-col pr-20 pl-3 py-12': innerWidth < 1110,
     'py-56': innerWidth >= 1110,
     'text-popstar/[0.6] ': color,
     'text-glaucous/[0.6] ': !color
@@ -90,7 +90,7 @@
   <hr *ngIf="innerWidth >= 1110" class="h-96 mx-20 border" />
 
   <!-- RIGHT-->
-  <div [ngClass]="{ 'my-10': innerWidth < 1110 }">
+  <div [ngClass]="{ 'mt-10': innerWidth < 1110 }">
     <span
       [ngClass]="{ 'text-5xl': innerWidth >= 630 }"
       class="font-bold text-2xl text-black"
@@ -102,34 +102,25 @@
         'text-2xl mt-10': innerWidth > 630
       }"
     >
-      <div class="flex my-5 items-center font-medium">
+      <div class="flex items-center font-medium">
         <img src="assets/images/about_page/web.svg" alt="" />
-        <span class="mx-2 ml-4">HTML</span>
-        <span class="mx-2">CSS</span>
-        <span class="mx-2">JAVASCRIPT</span>
-        <span class="mx-2 mr-4">TYPESCRIPT</span>
+        <span class="mx-2 ml-4">HTML, CSS, JAVASCRIPT, TYPESCRIPT</span>
       </div>
       <div class="flex my-5 items-center">
         <img src="assets/images/about_page/database.svg" alt="" />
-        <span class="mx-2 ml-4">MYSQL</span>
-        <span class="mx-2 mr-4">MONGODB</span>
+        <span class="mx-2 ml-4">MYSQL, MONGODB, FIREBASE</span>
       </div>
       <div class="flex my-5 items-center">
         <img src="assets/images/about_page/framework.svg" alt="" />
-        <span class="mx-2 ml-4">REACT</span>
-        <span class="mx-2 mr-4">ANGULAR</span>
+        <span class="mx-2 ml-4">REACT, NODE, ANGULAR, REACT NATIVE</span>
       </div>
       <div class="flex my-5 items-center">
         <img src="assets/images/about_page/programming.svg" alt="" />
-        <span class="mx-2 ml-4">C</span>
-        <span class="mx-2">C++</span>
-        <span class="mx-2 mr-4">JAVA</span>
+        <span class="mx-2 ml-4">C, C++, JAVA</span>
       </div>
       <div class="flex my-5 items-center">
         <img src="assets/images/about_page/graphic.svg" alt="" />
-        <span class="mx-2 ml-3">FIGMA</span>
-        <span class="mx-2">CANVA</span>
-        <span class="mx-2 mr-4">ILLUSTRATOR</span>
+        <span class="mx-2 ml-3">FIGMA, CANVA, ILLUSTRATOR</span>
       </div>
     </div>
   </div>

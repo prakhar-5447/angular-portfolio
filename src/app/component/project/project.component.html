@@ -1,7 +1,7 @@
 <!-- PROJECT -->
 <section
   [ngClass]="{
-    'pr-20 pl-3 py-20': innerWidth < 1110,
+    'pr-20 pl-3 py-12': innerWidth < 1110,
     'py-32': innerWidth >= 1110
   }"
   id="PROJECT"
@@ -15,11 +15,11 @@
     >
   </div>
   <div
-    class="overflow-y-auto w-full h-full grid bg-white p-10"
+    class="overflow-y-auto w-full h-full grid bg-white"
     [ngClass]="{
-      'grid-cols-3 gap-4': innerWidth >= 1110,
-      'grid-cols-2 gap-2': innerWidth < 1110,
-      'grid-cols-1 gap-1': innerWidth < 630
+      'grid-cols-3 gap-4  p-10': innerWidth >= 1110,
+      'grid-cols-2 gap-2 p-5': innerWidth < 1110,
+      'grid-cols-1 gap-1 p-5': innerWidth < 630
     }"
   >
     <a
@@ -30,7 +30,7 @@
       [ngClass]="{
         'h-64': innerWidth >= 1110,
         'h-44': innerWidth < 1110,
-        'h-28': innerWidth < 630
+        'h-15': innerWidth < 630
       }"
     >
       <img class="absolute inset-0 w-full h-full" src="{{ i.image }}" alt="" />
