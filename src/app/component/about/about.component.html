@@ -10,7 +10,7 @@
   class="flex justify-center"
 >
   <!-- LEFT -->
-  <div class="flex flex-col">
+  <div class="flex flex-col" [ngClass]="{ 'w-1/2': innerWidth >= 630 }">
     <div class="font-bold text-sm">
       <span
         [ngClass]="{ 'text-5xl': innerWidth >= 630 }"
